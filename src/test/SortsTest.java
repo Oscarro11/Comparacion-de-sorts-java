@@ -9,6 +9,7 @@ import java.util.Random;
 import java.util.Collections;
 
 import main.MergeSort;
+import main.QuickSort;
 
 public class SortsTest {
     List<Integer> lista = new ArrayList<Integer>();
@@ -30,6 +31,12 @@ public class SortsTest {
     @Test
     public void mergeSortTest() {
         MergeSort<Integer> sort = new MergeSort<Integer>();
+        Assert.assertEquals(listaOrdenada, sort.ordenar(lista));
+    }
+
+    @Test
+    public void quickSortTest() {
+        QuickSort<Integer> sort = new QuickSort<Integer>();
         Assert.assertEquals(listaOrdenada, sort.ordenar(lista));
     }
 }
