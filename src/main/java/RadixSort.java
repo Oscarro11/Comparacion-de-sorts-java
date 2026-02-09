@@ -55,4 +55,9 @@ public class RadixSort<T extends Number & Comparable<T>> implements ISort<T>{
 
         return elementoMax;
     }
+
+    @Override
+    public String toString(){
+        return "RadixSort";
+    }
 }

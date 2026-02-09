@@ -51,4 +51,9 @@ public class MergeSort<T extends Comparable<T>> implements ISort<T>{
 
         return union;
     }
+
+    @Override
+    public String toString(){
+        return "MergeSort";
+    }
 }
