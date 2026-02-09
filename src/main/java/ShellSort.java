@@ -1,17 +1,26 @@
-public class ShellSort{
-    public static void ShellSort (int[] estructura){
-       int n = estructura.Length;
-       for (int gap = n/2; gap > 0; gap /= 2){
-        for (int i = gap; i < n; i += 1){
-            int temp = estructura[i];
-            int j = i;
-            while ( j >= gap && estructura[j - gap] > temp){
-                estructura[j] = estructura[j - gap];
-                j -= gap;
+package main.java;
+
+import java.util.List;
+
+public class ShellSort<T extends Comparable<T>> implements ISort<T>{
+    
+    public List<T> ordenar(List<T> estructura) {
+        int n = estructura.size();
+
+        for (int gap = n/2; gap > 0; gap /= 2) {
+            for (int i = gap; i < n; i++) {
+                T temp = estructura.get(i);
+                int j = i; 
+
+                while (j >= gap && estructura.get(j - gap).compareTo(temp) > 0) {
+                    estructura.set(j, estructura.get(j - gap));
+                    j -= gap;
+                }
+
+                estructura.set(j, temp);
             }
-            estructura[j] = temp;
-            
         }
-       } 
+
+        return estructura;
     }
 }

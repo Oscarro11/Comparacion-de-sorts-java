@@ -7,6 +7,7 @@ import main.java.GnomeSort;
 import main.java.MergeSort;
 import main.java.QuickSort;
 import main.java.RadixSort;
+import main.java.ShellSort;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,6 +52,12 @@ public class SortsTest {
     @Test
     public void gnomeSortTest() {
         GnomeSort<Integer> sort = new GnomeSort<Integer>();
+        Assert.assertEquals(listaOrdenada, sort.ordenar(lista));
+    }
+
+    @Test
+    public void shellSortTest() {
+        ShellSort<Integer> sort = new ShellSort<Integer>();
         Assert.assertEquals(listaOrdenada, sort.ordenar(lista));
     }
 }
