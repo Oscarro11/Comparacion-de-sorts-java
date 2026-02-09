@@ -9,9 +9,9 @@ import java.nio.file.Paths;
 import java.io.IOException;
 
 public class GeneradorNumeros {
-    private final Random RNG = new Random();
+    private static Random RNG = new Random();
 
-    public void crearArchivoAleatorio(int cantidad) throws IOException {
+    public static void crearArchivoAleatorio(int cantidad) throws IOException {
         try {
             guardarNumeros(generarNumeros(cantidad));
         } catch (IOException e) {
@@ -19,7 +19,7 @@ public class GeneradorNumeros {
         }
     }
 
-    private List<Integer> generarNumeros(int cantidadNumeros){
+    private static List<Integer> generarNumeros(int cantidadNumeros){
         List<Integer> listaIntegers = new ArrayList<Integer>();
 
         for (int i = 0; i < cantidadNumeros; i++) {
@@ -29,13 +29,16 @@ public class GeneradorNumeros {
         return listaIntegers;
     }
 
-    private void guardarNumeros(List<Integer> numeros) throws IOException{
+    private static void guardarNumeros(List<Integer> numeros) throws IOException{
         Path path = Paths.get("src/main/resources/numerosAleatorios.txt");
         StringBuilder builder = new StringBuilder();
 
         for (Integer integer : numeros) {
             builder.append(integer);
+            builder.append(", ");
         }
+
+        builder.delete(builder.length() - 2, builder.length());
 
         try {
             Files.writeString(path, builder.toString());    
