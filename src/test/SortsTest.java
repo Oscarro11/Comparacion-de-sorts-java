@@ -10,6 +10,7 @@ import java.util.Collections;
 
 import main.MergeSort;
 import main.QuickSort;
+import main.RadixSort;
 
 public class SortsTest {
     List<Integer> lista = new ArrayList<Integer>();
@@ -37,6 +38,12 @@ public class SortsTest {
     @Test
     public void quickSortTest() {
         QuickSort<Integer> sort = new QuickSort<Integer>();
+        Assert.assertEquals(listaOrdenada, sort.ordenar(lista));
+    }
+
+    @Test
+    public void contingSortTest() {
+        RadixSort<Integer> sort = new RadixSort<Integer>();
         Assert.assertEquals(listaOrdenada, sort.ordenar(lista));
     }
 }
