@@ -14,11 +14,11 @@ public class App {
         escribir("Bienvenido al programa de comparacion de sorts\n");
         while (continuar) {
             escribir("""
-                Elija una de las siguientes opciones:
-                1. Generar lista aleatoria de numeros
-                2. Generar lista ordenada de numeros
-                3. Realizar comparacion de sorts
-                4. Salir
+            Elija una de las siguientes opciones:
+            1. Generar lista aleatoria de numeros
+            2. Generar lista ordenada de numeros
+            3. Realizar comparacion de sorts
+            4. Salir
             """);
 
             opcion = teclado.nextLine();
