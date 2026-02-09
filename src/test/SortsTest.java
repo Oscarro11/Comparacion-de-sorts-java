@@ -3,6 +3,7 @@ package test;
 import org.junit.Assert;
 import org.junit.jupiter.api.*;
 
+import main.java.GnomeSort;
 import main.java.MergeSort;
 import main.java.QuickSort;
 import main.java.RadixSort;
@@ -42,8 +43,14 @@ public class SortsTest {
     }
 
     @Test
-    public void contingSortTest() {
+    public void countingSortTest() {
         RadixSort<Integer> sort = new RadixSort<Integer>();
+        Assert.assertEquals(listaOrdenada, sort.ordenar(lista));
+    }
+
+    @Test
+    public void gnomeSortTest() {
+        GnomeSort<Integer> sort = new GnomeSort<Integer>();
         Assert.assertEquals(listaOrdenada, sort.ordenar(lista));
     }
 }
