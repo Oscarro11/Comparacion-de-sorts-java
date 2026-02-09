@@ -3,14 +3,14 @@ package test;
 import org.junit.Assert;
 import org.junit.jupiter.api.*;
 
+import main.java.MergeSort;
+import main.java.QuickSort;
+import main.java.RadixSort;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Collections;
-
-import main.MergeSort;
-import main.QuickSort;
-import main.RadixSort;
 
 public class SortsTest {
     List<Integer> lista = new ArrayList<Integer>();
