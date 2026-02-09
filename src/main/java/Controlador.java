@@ -42,14 +42,14 @@ public class Controlador {
         sorts.add(new RadixSort<Integer>());
 
         for (ISort<Integer> sort : sorts) {
-            builder.append("El tiempo de ejecucion del sort '" + sort.getClass() + "' es: \n");
-            builder.append(calcularTiempoSort(sort) + "\n\n");
+            builder.append("El tiempo de ejecucion del sort '" + sort.toString() + "' es: \n");
+            builder.append(calcularTiempoSort(sort) + " nanosegundos\n\n");
         }
 
         return builder.toString();
     }
 
-    private String calcularTiempoSort(ISort<Integer> sort){
+    private int calcularTiempoSort(ISort<Integer> sort){
         Instant inicio = Instant.now();
 
         List<Integer> copiaNumerosOrdenar = new ArrayList<Integer>(numerosOrdenar);
@@ -58,6 +58,6 @@ public class Controlador {
         Instant fin = Instant.now();
         Duration diferenciaTiempo = Duration.between(inicio, fin);
 
-        return diferenciaTiempo.toString();
+        return diferenciaTiempo.toNanosPart();
     }
 }
