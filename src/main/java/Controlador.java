@@ -40,6 +40,8 @@ public class Controlador {
         sorts.add(new MergeSort<Integer>());
         sorts.add(new QuickSort<Integer>());
         sorts.add(new RadixSort<Integer>());
+        sorts.add(new GnomeSort<Integer>());
+        sorts.add(new ShellSort<Integer>());
 
         for (ISort<Integer> sort : sorts) {
             builder.append("El tiempo de ejecucion del sort '" + sort.toString() + "' es: \n");

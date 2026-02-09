@@ -23,4 +23,9 @@ public class ShellSort<T extends Comparable<T>> implements ISort<T>{
 
         return estructura;
     }
+
+    @Override
+    public String toString() {
+        return "ShellSort";
+    }
 }
